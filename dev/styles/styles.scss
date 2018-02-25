@@ -1,0 +1,19 @@
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.collection {
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    li {
+        width: 50%;
+        margin: 0 auto;
+    }
+    img {
+        width: 100%;
+        opacity: 0.5;
+    }
+}

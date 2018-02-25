@@ -24,17 +24,9 @@
             ],
             "imgURL": ["https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0005/aj2white_black_a1_lateral-t.png"],
             "colorways": {
-                "0": [
-                    "Black",
-                    "Red"
-                ],
-                "1": [
-                    "Blue"
-                ],
-                "2": [
-                    "White",
-                    "Red"
-                ]
+                "0": ["Black","Red"],
+                "1": ["Blue"],
+                "2": ["White","Red"]
             }
         },
         {
@@ -45,7 +37,7 @@
                 "Tinker Hatfield"
             ],
             "image": [
-                "./images/aj2white_black.png"
+                "./images/aj_iii_cement.png"
             ],
             "imgURL": ["https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0023/aj_iii_retro_og-854262-001_a1_lateral_01-t.png"],
             "colorways": {
@@ -379,7 +371,7 @@
             "year": 2012,
             "url": "https://www.jordan.com/collection/air-jordan-27",
             "designer": ["Tinker Hatfield"],
-            "image": ["./images/aj2023_a-t.png"],
+            "image": ["./images/aj2012_a-t.png"],
             "imgURL": ["https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0003/aj_2012_508320-182_a1_lateral_a-t.png"],
             "colorways": {
                 "0": ["Black","White"],
