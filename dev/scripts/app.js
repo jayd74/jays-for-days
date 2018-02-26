@@ -65,6 +65,7 @@ class App extends React.Component {
       // });
     } //end componentDidMount()
     toggleCompleted(shoe){
+      shoe.preventDefault
       console.log(shoe)
       const jordanCheck = this.state.jordanCollection.find((jays) => {
         // console.log(jays.key)
@@ -89,7 +90,7 @@ class App extends React.Component {
         <div>
           <div className="wrapper">
             <header>
-              <h1>Header</h1>
+              <h1>Jays For Days</h1>
             </header>
           
             <ul className="collection">
