@@ -1,0 +1,325 @@
+{
+  "jordans" : {
+    "-L6DukEC9Tn7-lBqRcsZ" : {
+      "colorways" : [ [ "Black", "Red" ], [ "Black", "Blue" ], [ "White", "Red" ], [ "White", "Red" ] ],
+      "designer" : "Peter Moore",
+      "image" : [ "./images/aj1_bred.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/aji/ajc_retro-nola-02_a4_3q-final.png" ],
+      "model" : "AJ I",
+      "url" : "https://www.jordan.com/collection/air-jordan-1",
+      "year" : 1985,
+      "completed": false
+    },
+    "-L6Dul2bL69PGCDFZcL7" : {
+      "colorways" : [ [ "Black", "Red" ], [ "Blue" ], [ "White", "Red" ] ],
+      "designer" : [ "Peter Moore", "Bruce Kilgore" ],
+      "image" : [ "./images/aj2white_black.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0005/aj2white_black_a1_lateral-t.png" ],
+      "model" : "AJ II",
+      "url" : "https://www.jordan.com/collection/air-jordan-2",
+      "year" : 1986,
+      "completed": false
+      
+    },
+    "-L6DullDTPBajy7i89Kv" : {
+      "colorways" : [ [ "Black", "Red" ], [ "Blue", "White" ], [ "Grey", "Red", "Black" ], [ "White", "Red" ], [ "White", "Grey" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/aj_iii_cement.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0023/aj_iii_retro_og-854262-001_a1_lateral_01-t.png" ],
+      "model" : "AJ III",
+      "url" : "https://www.jordan.com/collection/air-jordan-3",
+      "year" : 1988,
+      "completed": false
+    },
+    "-L6Dum06PRa9TRzIZ5Iu" : {
+      "colorways" : [ [ "Black", "Grey" ], [ "Blue", "White" ], [ "Grey", "Red", "White" ], [ "White", "Red" ], [ "White", "Grey" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/ajiv-wc.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/ajiv/ajiv-wc-t.png" ],
+      "model" : "AJ IV",
+      "url" : "https://www.jordan.com/collection/air-jordan-4",
+      "year" : 1989,
+      "completed": false
+    },
+    "-L6DumNxg2j-QoLvZYcC" : {
+      "colorways" : [ [ "Black", "Grey" ], [ "Blue", "White" ], [ "Black", "Silver" ], [ "White", "Red" ], [ "White", "Grey" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/aj5-silver.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0023/599581-003_aj_retro_a1_lateral-t.png" ],
+      "model" : "AJ V",
+      "url" : "https://www.jordan.com/collection/air-jordan-5",
+      "year" : 1990,
+      "completed": false
+    },
+    "-L6Dumcc7X5Fbu7M7Exw" : {
+      "colorways" : [ [ "Black", "Grey" ], [ "Blue", "White" ], [ "Black", "Red" ], [ "White", "Red" ], [ "White", "Gold" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/aj6-slamdunk.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0007/717302-600_a1_lateral-t.png" ],
+      "model" : "AJ VI",
+      "url" : "https://www.jordan.com/collection/air-jordan-6",
+      "year" : 1991,
+      "completed": false
+    },
+    "-L6Dun2dHGGouH8_7Ct9" : {
+      "colorways" : [ [ "Black", "Red" ], [ "Silver", "White" ], [ "Black", "Silver" ], [ "White", "Red", "Blue" ], [ "White", "Gold" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/aj7-wrb.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0002/304775-142_a1_lateral-t.png" ],
+      "model" : "AJ VII",
+      "url" : "https://www.jordan.com/collection/air-jordan-7",
+      "year" : 1992,
+      "completed": false
+    },
+    "-L6DunIIH-zlxryaLQRD" : {
+      "colorways" : [ [ "Black", "Grey", "Blue" ], [ "Blue", "White" ], [ "Black", "Silver" ], [ "White", "Red" ], [ "White", "Grey" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/aj8-bg.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0002/305381-025_a1_lateral-t.png" ],
+      "model" : "AJ VIII",
+      "url" : "https://www.jordan.com/collection/air-jordan-8",
+      "year" : 1993,
+      "completed": false
+    },
+    "-L6DuneuG5nmyF24sJDW" : {
+      "colorways" : [ [ "Black", "Grey", "White" ], [ "Blue", "White" ], [ "Black", "White", "Red" ], [ "White", "Red", "Black" ], [ "White", "Red" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/aj9-wb.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0002/302370-112_a1_lateral-t.png" ],
+      "model" : "AJ IX",
+      "url" : "https://www.jordan.com/collection/air-jordan-9",
+      "year" : 1993,
+      "completed": false
+    },
+    "-L6DunuWJg8KBuwIVr34" : {
+      "colorways" : [ [ "Black", "Grey", "Red" ], [ "Blue", "White" ], [ "Black", "Purple" ], [ "White", "Red", "Black" ], [ "White", "Red", "Blue" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/ajx-wb.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0002/310805-102_a1_lateral-t.png" ],
+      "model" : "AJ X",
+      "url" : "https://www.jordan.com/collection/air-jordan-10",
+      "year" : 1994,
+      "completed": false
+    },
+    "-L6Duo9RDn-iTYlvEPb1" : {
+      "colorways" : [ [ "Black", "Blue" ], [ "Red", "White" ], [ "Black", "Silver" ], [ "Black", "White", "Red" ], [ "White", "Red" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/aj11-bred.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0002/528895-012_a1_lateral-t.png" ],
+      "model" : "AJ XI",
+      "url" : "https://www.jordan.com/collection/air-jordan-11",
+      "year" : 1995,
+      "completed": false
+    },
+    "-L6DuoSdI7cKUQ_QxCBJ" : {
+      "colorways" : [ [ "White", "Black", "Gold" ], [ "Blue", "White", "Silver" ], [ "Black", "Grey" ], [ "Black", "White", "Gold" ], [ "White", "Red" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/aj12-cny.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0005/881427-122_a1_lateral-t.png" ],
+      "model" : "AJ XII",
+      "url" : "https://www.jordan.com/collection/air-jordan-12",
+      "year" : 1996,
+      "completed": false
+    },
+    "-L6Dup0p6jp9PsDoUzWZ" : {
+      "colorways" : [ [ "Black", "Red" ], [ "White", "Black" ], [ "White", "Blue" ], [ "Black", "White", "Red" ], [ "White", "Red" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/aj_xiii_bred.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0009/aj_xiii_retro-414571-004_a1_lateral-t.png" ],
+      "model" : "AJ XIII",
+      "url" : "https://www.jordan.com/collection/air-jordan-13",
+      "year" : 1997,
+      "completed": false
+    },
+    "-L6DupHMiW9UxBp103D8" : {
+      "colorways" : [ [ "Black", "Red", "Yellow" ], [ "White", "Black" ], [ "White", "Blue", "Black" ], [ "Black", "White", "Yellow" ], [ "White", "Grey" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/aj14-blue.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0005/ho15_aj14low_a1_lateral-t.png" ],
+      "model" : "AJ XIV",
+      "url" : "https://www.jordan.com/collection/air-jordan-14",
+      "year" : 1998,
+      "completed": false
+    },
+    "-L6DupYBJQ3CegZpaZIT" : {
+      "colorways" : [ [ "Grey", "White" ], [ "White", "Black" ], [ "White", "Blue" ], [ "Black", "White" ], [ "White", "Red" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/ajxv-gw-t.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/ajxv/ajxv-gw-t.png" ],
+      "model" : "AJ XV",
+      "url" : "https://www.jordan.com/collection/air-jordan-15",
+      "year" : 1999,
+      "completed": false
+    },
+    "-L6Dupqq-ScCKYMZCoCD" : {
+      "colorways" : [ [ "Black", "Red" ], [ "Black", "Purple" ], [ "White", "Blue" ], [ "White", "Red" ] ],
+      "designer" : [ "Wilson Smith III" ],
+      "image" : [ "./images/aj16-blue.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0002/683075-106_a1_lateral-t.pngaj16" ],
+      "model" : "AJ XVI",
+      "url" : "https://www.jordan.com/collection/air-jordan-16",
+      "year" : 2001,
+      "completed": false
+    },
+    "-L6Duq9tQEkMKLwVSZ0-" : {
+      "colorways" : [ [ "Black", "Silver" ], [ "Black", "White" ], [ "White", "Blue" ], [ "White", "Red" ] ],
+      "designer" : [ "Wilson Smith III" ],
+      "image" : [ "./images/ajxvii-mn-t.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/ajxvii/ajxvii-mn-t.png" ],
+      "model" : "AJ XVII",
+      "url" : "https://www.jordan.com/collection/air-jordan-17",
+      "year" : 2002,
+      "completed": false
+    },
+    "-L6DuqQ8f0hE3CkMmGDy" : {
+      "colorways" : [ [ "Black", "Blue" ], [ "White", "Blue" ] ],
+      "designer" : [ "Wilson Smith III" ],
+      "image" : [ "./images/aj_xviii_whiteblue.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0023/aj_xviii_retro-aa2494-106_a1_lateral-t.png" ],
+      "model" : "AJ XVIII",
+      "url" : "https://www.jordan.com/collection/air-jordan-18",
+      "year" : 2003,
+      "completed": false
+    },
+    "-L6DuqdzX8MOWCKSddSv" : {
+      "colorways" : [ [ "Black", "Silver" ], [ "Black", "White" ], [ "White", "Grey" ], [ "White", "Red" ] ],
+      "designer" : [ "Tate Kuerbis" ],
+      "image" : [ "./images/aj_xix-og.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/ajxix/ajxix-og--t.png" ],
+      "model" : "AJ XIX",
+      "url" : "https://www.jordan.com/collection/air-jordan-19",
+      "year" : 2004,
+      "completed": false
+    },
+    "-L6DuqvtBCj2kUA90Ldl" : {
+      "colorways" : [ [ "Black", "White" ], [ "White", "Silver" ], [ "White", "Red" ] ],
+      "designer" : [ "Tinker Hatfield", "Mark Smith" ],
+      "image" : [ "./images/ajxx-white.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0006/743991-100_a1_lateral-t.png" ],
+      "model" : "AJ XX",
+      "url" : "https://www.jordan.com/collection/air-jordan-20",
+      "year" : 2005,
+      "completed": false
+    },
+    "-L6DurXBptHW8B0Tm5sj" : {
+      "colorways" : [ [ "White", "Red" ], [ "White", "Silver" ] ],
+      "designer" : [ "D'Wayne Edwards" ],
+      "image" : [ "./images/ajxxi-h-t.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/ajxxi/ajxxi-h-t.png" ],
+      "model" : "AJ XXI",
+      "url" : "https://www.jordan.com/collection/air-jordan-21",
+      "year" : 2006,
+      "completed": false
+    },
+    "-L6DurrmXJtZ_tJgTLP9" : {
+      "colorways" : [ [ "White", "Silver", "Red" ] ],
+      "designer" : [ "D'Wayne Edwards" ],
+      "image" : [ "./images/ajxx2-h-t.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/ajxx2/ajxx2-h-t.png" ],
+      "model" : "AJ XX2",
+      "url" : "https://www.jordan.com/collection/air-jordan-22",
+      "year" : 2007,
+      "completed": false
+    },
+    "-L6DusA4zrCWOoWYfrGm" : {
+      "colorways" : [ [ "Black", "Red" ] ],
+      "designer" : [ "Tinker Hatfield", "Mark Smith" ],
+      "image" : [ "./images/ajxx3-h-t.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/ajxx3/ajxx3-h-t.png" ],
+      "model" : "AJ XX3",
+      "url" : "https://www.jordan.com/collection/air-jordan-23",
+      "year" : 2008,
+      "completed": false
+    },
+    "-L6DusUEt61HYLs--K5L" : {
+      "colorways" : [ [ "Black", "White" ], [ "White", "Black", "Silver" ] ],
+      "designer" : [ "Jason Mayden" ],
+      "image" : [ "./images/aj2009-h-t.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/aj2009/aj2009-h-t.png" ],
+      "model" : "AJ 2009",
+      "url" : "https://www.jordan.com/collection/air-jordan-24",
+      "year" : 2009,
+      "completed": false
+    },
+    "-L6Dut-ZawpRT3RHDvw-" : {
+      "colorways" : [ [ "Black" ], [ "White", "Black", "Red" ], [ "Black", "Blue" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/aj2010-h-t.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/aj2010/aj2010-h-t.png" ],
+      "model" : "AJ 2010",
+      "url" : "https://www.jordan.com/collection/air-jordan-25",
+      "year" : 2010,
+      "completed": false
+    },
+    "-L6DutMTSnrazUjVzPRF" : {
+      "colorways" : [ [ "White", "Red" ], [ "White", "Black" ] ],
+      "designer" : [ "Tinker Hatfield", "Tom Luedecke" ],
+      "image" : [ "./images/aj2011-rw-t.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/aj2011/aj2011-rw-t.png" ],
+      "model" : "AJ 2011",
+      "url" : "https://www.jordan.com/collection/air-jordan-26",
+      "year" : 2011,
+      "completed": false
+    },
+    "-L6DutbkrfE-GyyHm0u6" : {
+      "colorways" : [ [ "Black", "White" ], [ "White", "Black", "Silver" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/aj2012_a-t.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0003/aj_2012_508320-182_a1_lateral_a-t.png" ],
+      "model" : "AJ 2012",
+      "url" : "https://www.jordan.com/collection/air-jordan-27",
+      "year" : 2012,
+      "completed": false
+    },
+    "-L6Dutvi5qLaA97Kh-Xv" : {
+      "colorways" : [ [ "Green", "White" ], [ "White", "Black" ], [ "Red", "White" ], [ "Blue", "White" ] ],
+      "designer" : [ "Tinker Hatfield", "Josh Heard" ],
+      "image" : [ "./images/aj_xxvii-bamboo.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0001/aj_xxviii_649501-100_a1_lateral-t.png" ],
+      "model" : "AJ XX8",
+      "url" : "https://www.jordan.com/collection/air-jordan-28",
+      "year" : 2013,
+      "completed": false
+    },
+    "-L6Duu_uzRdBseLcPwSK" : {
+      "colorways" : [ [ "Black", "White", "Red" ], [ "White", "Black" ], [ "Pink", "Teal", "Black" ], [ "Blue", "White" ], [ "Blue", "White", "Black" ] ],
+      "designer" : [ "Tinker Hatfield" ],
+      "image" : [ "./images/ajxx9-h-t.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/ajxx9/ajxx9-h-t.png" ],
+      "model" : "AJ XX9",
+      "url" : "https://www.jordan.com/collection/air-jordan-29",
+      "year" : 2014,
+      "completed": false
+    },
+    "-L6Duuskb__4gh-NfKcf" : {
+      "colorways" : [ [ "Grey", "White" ], [ "White", "Black", "Blue" ], [ "Red", "White" ], [ "Black", "White" ], [ "Black", "Blue", "White" ] ],
+      "designer" : [ "Tinker Hatfield", "Mark Smith" ],
+      "image" : [ "./images/aj_xxx.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/0001/aj_xxx_811006-101_a1_lateral-t.png" ],
+      "model" : "AJ XXX",
+      "url" : "https://www.jordan.com/collection/air-jordan-30",
+      "year" : 2015,
+      "completed": false
+    },
+    "-L6DuvF_iaEdo4Vt7PM6" : {
+      "colorways" : [ [ "Black", "Red", "White" ], [ "White", "Black", "Blue" ], [ "Red", "White", "Black" ], [ "Black", "White" ], [ "Black", "Grey", "White" ] ],
+      "designer" : [ "Tate Kuerbis" ],
+      "image" : [ "./images/aj_xxxi_banned.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/ajxxxi/xxxi_bred_a1_lateral-t.png" ],
+      "model" : "AJ XXXI",
+      "url" : "https://www.jordan.com/collection/air-jordan-31",
+      "year" : 2016,
+      "completed": false
+    },
+    "-L6DuvbimcbDOGtp8MEe" : {
+      "colorways" : [ [ "Black", "Red" ], [ "White", "Black", "Red" ], [ "Red" ], [ "Blue", "White" ], [ "Black", "Blue", "White" ] ],
+      "designer" : [ "Tate Kuerbis" ],
+      "image" : [ "./images/aj_xxxii_bred.png" ],
+      "imgURL" : [ "https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/collection/ajxxxii/aj_xxxii_bredhigh_og-aa1253-001_a1_lateral-t.png" ],
+      "model" : "AJ XXXII",
+      "url" : "https://www.jordan.com/collection/air-jordan-32",
+      "year" : 2017,
+      "completed": false
+    }
+  }
+}

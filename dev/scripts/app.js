@@ -41,6 +41,8 @@ class App extends React.Component {
         // console.log(data)
         const state = []
         for (let key in data) {
+          // console.log(key)
+          data[key].key = key;
           state.push(data[key])
         }
         // console.log(state)
@@ -62,27 +64,26 @@ class App extends React.Component {
       //   console.log(error)
       // });
     } //end componentDidMount()
-    toggleCompleted(e){
-      // console.log(e)
-      // console.log(e.target.value)
+    toggleCompleted(shoe){
+      console.log(shoe)
       const jordanCheck = this.state.jordanCollection.find((jays) => {
-        console.log(jays.url)
-         return jays.url;
+        // console.log(jays.key)
+         return jays.key === shoe.key;
       });
+   
+      console.log(jordanCheck.key)
+      const dbref = firebase.database().ref(`/jordans/${jordanCheck.key}`)
+      console.log(dbref);
 
-      console.log(jordanCheck.url)
+      jordanCheck.completed = jordanCheck.completed === true ? false : true;
 
-      const dbref = firebase.database().ref(`/jordans/`)
-      // console.log(dbref);
-
-      // jordanCheck.completed = jordanCheck.completed === true ? false : true;
-
-      // delete jordanCheck.key;
-      // dbref.push(jordanCheck);  
+      console.log(jordanCheck.completed)
+      delete jordanCheck.key;
+      dbref.set(jordanCheck);  
     }
-    showInfo() {
+    // showInfo() {
       
-    }
+    // }
     render() {
       return (
         <div>
