@@ -5,6 +5,7 @@ body {
 .wrapper {
     max-width: 1000px;
     margin: 0 auto;
+    position: relative;
 }
 h1 {
     background: url(/images/aj-logo-red.svg) center no-repeat;
@@ -35,6 +36,7 @@ h1 {
     img {
         width: 100%;
         opacity: 0.3;
+        transition: 0.3s;
     }
     .completed img{
         opacity: 1;
@@ -55,10 +57,19 @@ h1 {
         text-transform: uppercase; 
         font-size: 14px; 
         font-weight: 500;
-        line-height: 15px;
+        line-height: 20px;
     }
     button:hover {
         cursor: pointer;
-    }
-    
+    }   
+}
+
+.moreInfo {
+    background: black;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    top: 100px;
+    max-width: 100%;
+    border: solid white 3px;
 }

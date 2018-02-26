@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import JordanCard from './jordan.js'
+import JordanCard from './jordan.js';
+import MoreInfo from './moreInfo.js';
+// import MoreInfo from './moreInfo.js';
 
 // Initialize Firebase
 var config = {
@@ -14,41 +16,48 @@ var config = {
 firebase.initializeApp(config);
 
 
-
-
 class App extends React.Component {
     constructor (){
       super();
       this.state = {
-        jordanCollection: []
+        jordanCollection: [],
+        showInfo: false,
+        colorways: ''
       };
-      
+      // console.log (this.state)
       this.handleChange = this.handleChange.bind(this);
       this.toggleCompleted = this.toggleCompleted.bind(this);
+      this.showInfo = this.showInfo.bind(this);
+      this.hideInfo = this.hideInfo.bind(this);
+      this.addColourway = this.addColourway.bind(this)
     }
     handleChange(e) {
-      console.log ('change')
       e.preventDefault();
       this.setState({
-        [e.target.id]: e.target.value,
+        [e.target.id]: e.target.value
       })
+      console.log(e.target.value)
     }
-
     componentDidMount(){
       const dbref = firebase.database().ref('/jordans');
       dbref.on('value', (snapshot) => {
         const data = snapshot.val();
         // console.log(data)
         const state = []
+        // console.log(state)
         for (let key in data) {
           // console.log(key)
           data[key].key = key;
           state.push(data[key])
+          // console.log(state)
         }
-        // console.log(state)
+        for (let key in data) {
+        }
         this.setState({
           jordanCollection: state,
+          colorways: state
         })
+        console.log(this.state)
       })
       // const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -66,25 +75,48 @@ class App extends React.Component {
     } //end componentDidMount()
     toggleCompleted(shoe){
       shoe.preventDefault
-      console.log(shoe)
       const jordanCheck = this.state.jordanCollection.find((jays) => {
         // console.log(jays.key)
          return jays.key === shoe.key;
       });
    
-      console.log(jordanCheck.key)
       const dbref = firebase.database().ref(`/jordans/${jordanCheck.key}`)
-      console.log(dbref);
+      // console.log(dbref);
 
       jordanCheck.completed = jordanCheck.completed === true ? false : true;
 
-      console.log(jordanCheck.completed)
       delete jordanCheck.key;
       dbref.set(jordanCheck);  
     }
-    // showInfo() {
-      
-    // }
+    showInfo(e,i) {
+      e.preventDefault();
+      this.setState({
+        showInfo:true,
+        shoeToShow: this.state.jordanCollection[i]
+      })
+    }
+    hideInfo(e) {
+      e.preventDefault();
+      console.log('close')
+      this.setState({
+        showInfo: false
+      })
+    }
+    addColourway(key) {
+      // console.log(this.state.jordanCollection[i])
+      // const dbref = firebase.database().ref(`/jordans/`)
+      // console.log(dbref)
+      // console.log(key)
+      const dbref = firebase.database().ref(`/jordans/${key}/colorways`);
+
+      dbref.push(this.state.colorways)
+
+
+
+    //    this.setState({
+    //    colorways: ''
+    //  })
+    }
     render() {
       return (
         <div>
@@ -97,10 +129,22 @@ class App extends React.Component {
               {this.state.jordanCollection.map((shoe, i) => {
                 // console.log(i)
                 return (
-                  <JordanCard data={shoe} key={i} value={i} toggleCompleted={this.toggleCompleted}/>
+                  <JordanCard data={shoe} key={i} value={i} toggleCompleted={this.toggleCompleted} showInfo={(e) => this.showInfo(e,i)}/>
+                  // <MoreInfo onClick={this.showInfo}/>
                 )
               })}
+            
             </ul>
+           
+
+
+                  {this.state.showInfo ? 
+                  <MoreInfo data={this.state.shoeToShow} closeBox={this.hideInfo} onChange={this.handleChange}addColourway={this.addColourway}/> 
+                  : null}
+
+            
+            
+
 
           </div>
         
