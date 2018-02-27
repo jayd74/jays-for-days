@@ -3,8 +3,7 @@ import React from 'react'
 class MoreInfo extends React.Component {
     constructor(){
         super();
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.findColor = this.findColor.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     //function to handleSubmit to add colorway to firebase
     handleSubmit(e){
