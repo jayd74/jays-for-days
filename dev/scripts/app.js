@@ -15,22 +15,23 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
 class App extends React.Component {
     constructor (){
+      //set original state for app
       super();
       this.state = {
         jordanCollection: [],
         showInfo: false,
         colorways: ''
       };
-      // console.log (this.state)
+      // function binders
       this.handleChange = this.handleChange.bind(this);
       this.toggleCompleted = this.toggleCompleted.bind(this);
       this.showInfo = this.showInfo.bind(this);
       this.hideInfo = this.hideInfo.bind(this);
       this.addColourway = this.addColourway.bind(this)
     }
+    //function to handle change on events
     handleChange(e) {
       e.preventDefault();
       this.setState({
@@ -43,26 +44,19 @@ class App extends React.Component {
       dbref.on('value', (snapshot) => {
         const data = snapshot.val();
         const state = []
-        // console.log(state)
         for (let key in data) {
-          // console.log(data[key].colorways)
           data[key].key = key;
           state.push(data[key])
-          // console.log(colorways)
-        }
-             
+        }    
         this.setState({
           jordanCollection: state,
         })
-
-        
-        // console.log(this.state)
       })
 
+      //implementation of google authenication.
 
       // const provider = new firebase.auth.GoogleAuthProvider();
 
-      
       // firebase.auth().signInWithPopup(provider).then(function (result) {
       //   // This gives you a Google Access Token. You can use it to access the Google API.
       //   const token = result.credential.accessToken;
@@ -74,82 +68,59 @@ class App extends React.Component {
       //   // Error handling goes in here.
       //   console.log(error)
       // });
+
     } //end componentDidMount()
+    // toggle checkbox for to mark completion of show
     toggleCompleted(shoe){
       shoe.preventDefault
       const jordanCheck = this.state.jordanCollection.find((jays) => {
-        // console.log(jays.key)
          return jays.key === shoe.key;
       });
-   
+      // referring to firebase to find state of completed.
       const dbref = firebase.database().ref(`/jordans/${jordanCheck.key}`)
-      // console.log(dbref);
-
       jordanCheck.completed = jordanCheck.completed === true ? false : true;
-
       delete jordanCheck.key;
       dbref.set(jordanCheck);  
     }
+    // function to check for event to show 'moreInfo'
     showInfo(e,i) {
       e.preventDefault();
       this.setState({
         showInfo:true,
         shoeToShow: this.state.jordanCollection[i]
       })
-
     }
+    //hide info upon click of x
     hideInfo(e) {
       e.preventDefault();
       this.setState({
         showInfo: false
       })
     }
-    addColourway(key) {
-      // console.log(this.state.jordanCollection[i])
-      // const dbref = firebase.database().ref(`/jordans/`)
-      // console.log(dbref)
-      // console.log(key)
-      const dbref = firebase.database().ref(`/jordans/${key}/colorways`);
-
-      // this.setState ({
-      //   colorways: this.state.jordanCollection.colorways
-      // })
-
+    // add colourway to jordanCollection/colorways
+    addColourway(key) {    
+      const dbref = firebase.database().ref(`/jordans/${key}/colorways`);  
       dbref.push(this.state.colorways)
-
     }
+    // render everything onto html page
     render() {
-
           return (
             <div>
           <div className="wrapper">
             <header>
               <h1>Jays For Days</h1>
             </header>
-          
             <ul className="collection">
               {this.state.jordanCollection.map((shoe, i) => {
-                // console.log(i)
                 return (
                   <JordanCard data={shoe} key={i} value={i} toggleCompleted={this.toggleCompleted} showInfo={(e) => this.showInfo(e,i)}/>
-                  // <MoreInfo onClick={this.showInfo}/>
                 )
-              })}
-            
+              })}   
             </ul>
-           
-
-
-                  {this.state.showInfo ? 
-                  <MoreInfo data={this.state.shoeToShow} closeBox={this.hideInfo} onChange={this.handleChange}addColourway={this.addColourway}/> 
-                  : null}
-
-            
-            
-
-
+              {this.state.showInfo ? 
+              <MoreInfo data={this.state.shoeToShow} closeBox={this.hideInfo} onChange={this.handleChange}addColourway={this.addColourway}/> 
+              : null}
           </div>
-        
         </div>
       )
     }

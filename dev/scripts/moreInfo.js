@@ -6,32 +6,15 @@ class MoreInfo extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.findColor = this.findColor.bind(this)
     }
+    //function to handleSubmit to add colorway to firebase
     handleSubmit(e){
         e.preventDefault();
-        this.props.addColourway(this.props.data.key)
-        
-        
+        this.props.addColourway(this.props.data.key)       
        console.log(this.props.data)
     }
-
-    findColor() {
-        for (let color in this.props.data.colorways) {
-            console.log(color);
-            console.log(Object.values(color));
-            
-        }
-        // console.log(Object.values(this.props.data.colorways))
-    }
+    //renders the moreInfo DIV
     render(){
-        // console.log(this.props.data.colorways)
-        // for (let color in this.props.data.colorways) {
-        //     // console.log(color)
-        //     return color
-        // }
-        // console.log(color)
-        return(
-            // console.log(this.prop.data)
-            
+        return(            
             <div className="moreInfo">
                 <div className="shoeImg">
                     <img src={this.props.data.image} alt=""/>
@@ -55,25 +38,7 @@ class MoreInfo extends React.Component {
                         <input id="colorways" type="text" placeholder="enter colourway" onChange={this.props.onChange} value={this.props.addColourway.colorways}/>
                         <input type="submit"/>
                     </form>
-                    
-                    
-                </div>
-            
-
-                {/* {this.findColor()
-                //     this.props.data.colorways.map((color, i) => {
-                //     console.log(color)
-                // })
-
-                
-                    // this.props.data.colorways.map((color, i) => {
-                    //     console.log(color)
-                    // })
-                }
-                 */}
-
-                
-                
+                </div>               
             </div>
         )    
     }

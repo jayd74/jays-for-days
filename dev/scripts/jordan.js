@@ -1,10 +1,7 @@
 import React from 'react'
 
-// showInfo() {
-//     console.log('something')
-// }
+//display each jordan box on the html page.
 const JordanCard = (props) => {
-    // console.log(props.data)
     return (
     
         <li className={props.data.completed === true ? 'completed' : null}>
