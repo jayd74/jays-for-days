@@ -1,0 +1,155 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: url("https://www.nike.com/VO/XX_XX/e/content/dam/jordan/air-jordan-collection/images/bgplates/h-bg-elephantdark.png"); }
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative; }
+
+h1 {
+  background: url(/images/aj-logo-red.svg) center no-repeat;
+  font-family: 'Khula', sans-serif;
+  font-size: 75px;
+  height: 150px;
+  color: white;
+  text-align: center;
+  line-height: 170px;
+  letter-spacing: 2px;
+  text-transform: uppercase; }
+
+.collection {
+  background: rgba(255, 255, 255, 0.5);
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 15px;
+  grid-column-gap: 15px;
+  padding: 20px; }
+  .collection li {
+    width: 70%;
+    background: #fff;
+    padding: 5% 15%;
+    margin: 0 auto; }
+  .collection img {
+    width: 100%;
+    opacity: 0.3;
+    transition: 0.3s; }
+  .collection .completed img {
+    opacity: 1; }
+  .collection h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 5px;
+    text-align: center;
+    letter-spacing: 2px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black; }
+  .collection button {
+    background: none;
+    float: right;
+    border: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px; }
+  .collection button:hover,
+  .collection button:focus {
+    cursor: pointer;
+    color: #ce1141;
+    text-decoration: underline;
+    transition: 0.23s; }
+
+.moreInfo {
+  background: black;
+  color: white;
+  z-index: 2;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  padding: 20px;
+  border: solid white 3px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-transform: uppercase; }
+  .moreInfo .shoeImg, .moreInfo .shoeInfo, .moreInfo form {
+    border: solid white;
+    margin: 0; }
+  .moreInfo .shoeImg {
+    background: white;
+    text-align: center; }
+    .moreInfo .shoeImg img {
+      width: 100%; }
+  .moreInfo h2, .moreInfo h3, .moreInfo h4 {
+    border-bottom: solid white;
+    padding: 0 30px 25px 30px;
+    margin: 0; }
+  .moreInfo h2 {
+    font-size: 50px; }
+  .moreInfo h4 {
+    font-size: 24px; }
+  .moreInfo h5 {
+    margin: 25px 0 0 30px;
+    font-size: 11px; }
+  .moreInfo button {
+    float: right;
+    background: black;
+    color: white;
+    border: none;
+    border-left: solid white;
+    border-bottom: solid white;
+    font-size: 30px; }
+  .moreInfo button:hover,
+  .moreInfo button:focus {
+    cursor: pointer; }
+  .moreInfo input {
+    background: black;
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 16px 114px 17px 15px;
+    border: 0;
+    text-align: left; }
+  .moreInfo input[type=submit] {
+    border-left: solid white; }
+
+@media (max-width: 1024px) {
+  .moreInfo {
+    display: block; }
+    .moreInfo .shoeImg img {
+      width: 35%; } }
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 50px; }
+  .collection {
+    display: block; }
+    .collection li {
+      width: 70%;
+      margin: 20px auto; }
+  .moreInfo h2 {
+    font-size: 35px; }
+  .moreInfo h4 {
+    font-size: 20px; }
+  .moreInfo input {
+    padding: 20px;
+    border: solid white; }
+  .moreInfo .shoeImg img {
+    width: 50%; } }
+
+@media (max-width: 375px) {
+  h1 {
+    font-size: 40px; }
+  h2 {
+    font-size: 20px; }
+  .moreInfo input {
+    padding: 9px; } }
+
+@media (max-width: 320px) {
+  h1 {
+    font-size: 35px; }
+  .moreInfo input {
+    font-size: 14px;
+    padding: 15px; } }
