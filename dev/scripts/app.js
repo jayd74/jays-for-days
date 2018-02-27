@@ -115,9 +115,6 @@ class App extends React.Component {
       //   colorways: this.state.jordanCollection.colorways
       // })
 
-      this.setState ({
-        colorways: this.state.colorways
-      })
       dbref.push(this.state.colorways)
 
     }
