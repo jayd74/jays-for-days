@@ -20,7 +20,6 @@ h1 {
 }
 .collection {
     background: rgba($color: #fff, $alpha: 0.5);
-    width: 100%;
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -83,10 +82,7 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-transform: uppercase;
-    .shoeImg {
-        border: solid white;
-        margin: 0;
-    }  
+
     .shoeImg, .shoeInfo, form{
         border: solid white;
         margin: 0;
@@ -94,7 +90,11 @@ h1 {
     .shoeImg {
         background: white;
         text-align: center;
+        img {
+            width: 100%;
+        }
     }
+    
     h2, h3, h4{
         border-bottom: solid white;
         padding: 0 30px 25px 30px;
@@ -128,10 +128,74 @@ h1 {
         color: white;
         text-transform: uppercase;
         font-size: 20px;
-        padding: 15px 30px;
+        padding: 16px 114px 17px 15px;
         border: 0;
+        text-align: left;
     }
     input[type=submit] {
         border-left: solid white;
+    }
+}
+
+@media (max-width:1024px) {
+    .moreInfo {
+        display: block;
+        .shoeImg img {
+            width: 35%;
+        }
+    }
+}
+
+@media (max-width:480px) {
+    h1 {
+        font-size:50px;
+    }
+    .collection {
+        display: block;
+        li {
+            width: 70%;
+            margin: 20px auto;
+        }
+    }
+    .moreInfo {
+        h2 {
+            font-size: 35px;
+        }
+        h4 {
+            font-size: 20px;
+        }
+        input {
+            padding: 20px;
+            border: solid white;
+        }
+    }
+    .moreInfo .shoeImg img {
+        width: 50%;
+    }
+}
+
+@media (max-width:375px) {
+    h1{
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .moreInfo{
+        input {
+            padding: 9px;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    h1 {
+        font-size: 35px;
+    }
+    .moreInfo{
+        input {
+            font-size: 14px;
+            padding: 15px;
+        }
     }
 }
