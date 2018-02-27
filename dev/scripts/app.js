@@ -42,25 +42,27 @@ class App extends React.Component {
       const dbref = firebase.database().ref('/jordans');
       dbref.on('value', (snapshot) => {
         const data = snapshot.val();
-        // console.log(data)
         const state = []
         // console.log(state)
         for (let key in data) {
-          // console.log(key)
+          // console.log(data[key].colorways)
           data[key].key = key;
           state.push(data[key])
-          // console.log(state)
+          // console.log(colorways)
         }
-        for (let key in data) {
-        }
+             
         this.setState({
           jordanCollection: state,
-          colorways: state
         })
-        console.log(this.state)
+
+        
+        // console.log(this.state)
       })
+
+
       // const provider = new firebase.auth.GoogleAuthProvider();
 
+      
       // firebase.auth().signInWithPopup(provider).then(function (result) {
       //   // This gives you a Google Access Token. You can use it to access the Google API.
       //   const token = result.credential.accessToken;
@@ -94,10 +96,10 @@ class App extends React.Component {
         showInfo:true,
         shoeToShow: this.state.jordanCollection[i]
       })
+
     }
     hideInfo(e) {
       e.preventDefault();
-      console.log('close')
       this.setState({
         showInfo: false
       })
@@ -109,17 +111,20 @@ class App extends React.Component {
       // console.log(key)
       const dbref = firebase.database().ref(`/jordans/${key}/colorways`);
 
+      // this.setState ({
+      //   colorways: this.state.jordanCollection.colorways
+      // })
+
+      this.setState ({
+        colorways: this.state.colorways
+      })
       dbref.push(this.state.colorways)
 
-
-
-    //    this.setState({
-    //    colorways: ''
-    //  })
     }
     render() {
-      return (
-        <div>
+
+          return (
+            <div>
           <div className="wrapper">
             <header>
               <h1>Jays For Days</h1>
