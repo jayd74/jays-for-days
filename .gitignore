@@ -1,2 +1,7 @@
 node_modules/
 package-lock.json
+firebase.json
+database.rules.json
+firestore.indexes.json
+firebase.rules
+

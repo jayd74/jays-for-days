@@ -1,4 +1,5 @@
 import React from 'react'
+import Colorway from './colorway'
 
 class MoreInfo extends React.Component {
     constructor(){
@@ -13,7 +14,7 @@ class MoreInfo extends React.Component {
     }
     //renders the moreInfo DIV
     render(){
-        return(            
+    return(            
             <div className="moreInfo">
                 <div className="shoeImg">
                     <img src={this.props.data.image} alt=""/>
@@ -32,11 +33,20 @@ class MoreInfo extends React.Component {
                     <h4>{this.props.data.designer}</h4>
 
                     <h5>Colourways</h5>
+
+                    {/* {Object.values(this.props.data.colorways).map((color) =>{
+                        return 
+                        <div>
+                            <Colorway data={color}/>
+                        </div>
+                    })} */}
                     <h4>{Object.values(this.props.data.colorways)}</h4>
                     <form action="" onSubmit={this.handleSubmit}>
                         <input id="colorways" type="text" placeholder="enter colourway" onChange={this.props.onChange} value={this.props.addColourway.colorways}/>
                         <input type="submit"/>
                     </form>
+                    <h5>Details</h5>
+                    <h3><a href={this.props.data.url} target="_blank">{this.props.data.url}</a></h3>
                 </div>               
             </div>
         )    

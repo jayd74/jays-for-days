@@ -88,11 +88,16 @@ h1 {
     margin: 0; }
   .moreInfo h2 {
     font-size: 50px; }
+  .moreInfo h3 {
+    font-size: 16px; }
   .moreInfo h4 {
     font-size: 24px; }
   .moreInfo h5 {
     margin: 25px 0 0 30px;
     font-size: 11px; }
+  .moreInfo a {
+    text-decoration: none;
+    color: white; }
   .moreInfo button {
     float: right;
     background: black;

@@ -22,14 +22,17 @@ class App extends React.Component {
       this.state = {
         jordanCollection: [],
         showInfo: false,
-        colorways: ''
+        colorways: '',
+        loggedIn: false
       };
       // function binders
       this.handleChange = this.handleChange.bind(this);
       this.toggleCompleted = this.toggleCompleted.bind(this);
       this.showInfo = this.showInfo.bind(this);
       this.hideInfo = this.hideInfo.bind(this);
-      this.addColourway = this.addColourway.bind(this)
+      this.addColourway = this.addColourway.bind(this);
+      this.signIn = this.signIn.bind(this);
+      this.signOut = this.signOut(this);
     }
     //function to handle change on events
     handleChange(e) {
@@ -39,43 +42,67 @@ class App extends React.Component {
       })
       console.log(e.target.value)
     }
-    componentDidMount(){
-      const dbref = firebase.database().ref('/jordans');
-      dbref.on('value', (snapshot) => {
-        const data = snapshot.val();
-        const state = []
-        for (let key in data) {
-          data[key].key = key;
-          state.push(data[key])
-        }    
-        this.setState({
-          jordanCollection: state,
-        })
+    signIn() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+
+      provider.setCustomParameters({
+        prompt: 'select_account'
       })
-
-      //implementation of google authenication.
-
-      // const provider = new firebase.auth.GoogleAuthProvider();
-
-      // firebase.auth().signInWithPopup(provider).then(function (result) {
-      //   // This gives you a Google Access Token. You can use it to access the Google API.
-      //   const token = result.credential.accessToken;
-
-      //   // Get the signed-in user info.
-      //   const user = result.user;
-      //   // ...
-      // }).catch(function (error) {
-      //   // Error handling goes in here.
-      //   console.log(error)
-      // });
-
-    } //end componentDidMount()
-    // toggle checkbox for to mark completion of show
-    toggleCompleted(shoe){
-      shoe.preventDefault
-      const jordanCheck = this.state.jordanCollection.find((jays) => {
-         return jays.key === shoe.key;
+      firebase.auth().signInWithPopup(provider)
+        .then ((user) => {
+          console.log(user)
+        })
+    }
+    signOut() {
+      firebase.auth().signOut().then(function (success) {
+        console.log('Signed out!')
+      }, function (error) {
+        console.log(error);
       });
+    }
+    componentDidMount(){
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          this.setState ({
+            loggedIn: true,
+            user: user.uid,
+            userName: user.displayName,
+            jordanCollection: []
+          })
+          console.log(this.state.jordanCollection)
+          
+          // const dbref = firebase.database().ref(`/users/`);
+          const dbref = firebase.database().ref(`/jordans/`)
+          console.log(dbref)
+          dbref.on('value', (snapshot) => {
+            const data = snapshot.val();
+            console.log(data)
+            const state = []
+            for (let key in data) {
+              data[key].key = key;
+              state.push(data[key])
+            }    
+            console.log(state);
+            this.setState({
+              jordanCollection: state,
+            })
+            
+          })
+        } //end if (user) is loggedIn
+        else {
+          this.setState({
+            loggedIn: false,
+            user: null
+          })
+        }
+      }) //end firebase.auth9
+      } //end componentDidMount()
+      // toggle checkbox for to mark completion of show
+      toggleCompleted(shoe){
+        shoe.preventDefault
+        const jordanCheck = this.state.jordanCollection.find((jays) => {
+          return jays.key === shoe.key;
+        });
       // referring to firebase to find state of completed.
       const dbref = firebase.database().ref(`/jordans/${jordanCheck.key}`)
       jordanCheck.completed = jordanCheck.completed === true ? false : true;
@@ -109,6 +136,9 @@ class App extends React.Component {
           <div className="wrapper">
             <header>
               <h1>Jays For Days</h1>
+                  <button onClick={this.state.loggedIn ? this.signOut : this.signIn}>
+                {this.state.loggedIn ? <div><p>Sign Out {this.state.userName}</p></div> : <div><span className="google-span"><i className="fab fa-google"></i></span><span>Sign In</span></div>}
+              </button>
             </header>
             <ul className="collection">
               {this.state.jordanCollection.map((shoe, i) => {
