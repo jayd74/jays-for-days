@@ -23,7 +23,10 @@ class App extends React.Component {
         jordanCollection: [],
         showInfo: false,
         colorways: '',
-        loggedIn: false
+        loggedIn: false,
+        guestMode: false,
+        user: null,
+        selectedShoe: ''
       };
       // function binders
       this.handleChange = this.handleChange.bind(this);
@@ -32,7 +35,8 @@ class App extends React.Component {
       this.hideInfo = this.hideInfo.bind(this);
       this.addColourway = this.addColourway.bind(this);
       this.signIn = this.signIn.bind(this);
-      this.signOut = this.signOut(this);
+      this.signOut = this.signOut.bind(this);
+      this.saveCollection = this.saveCollection.bind(this);
     }
     //function to handle change on events
     handleChange(e) {
@@ -40,26 +44,56 @@ class App extends React.Component {
       this.setState({
         [e.target.id]: e.target.value
       })
-      console.log(e.target.value)
     }
     signIn() {
       const provider = new firebase.auth.GoogleAuthProvider();
 
-      provider.setCustomParameters({
-        prompt: 'select_account'
-      })
+     
       firebase.auth().signInWithPopup(provider)
         .then ((user) => {
-          console.log(user)
-        })
+        }) 
+      // provider.setCustomParameters({
+      //   prompt: 'select_account'
+      // })
     }
-    signOut() {
-      firebase.auth().signOut().then(function (success) {
-        console.log('Signed out!')
-      }, function (error) {
-        console.log(error);
+    guestSignIn() {
+      firebase.auth().signInAnonymously().catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        this.setState({
+          guestMode: true
+        })
+        // ...
       });
     }
+    signOut() {
+      firebase.auth().signOut()
+      // .then(function (success) {
+      //   console.log('Signed out!')
+      // }, function (error) {
+      //   console.log(error);
+      // });
+    }
+    saveCollection () {
+      const dbrefUser= firebase.database().ref(`/users/${firebase.auth().user.uid}`)
+      console.log(this.state)
+      dbref.push({}) 
+    //   console.log(dbref)
+    //   dbref.on('value', (snapshot) => {
+    //     const data = snapshot.val();
+    //     console.log(data)
+    //     const state = []
+    //     for (let key in data) {
+    //       data[key].key = key;
+    //       state.push(data[key])
+    //     }
+    //     console.log(state);
+    //     this.setState({
+    //       jordanCollection: state,
+    //     })
+    // }
+  }
     componentDidMount(){
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
@@ -69,45 +103,69 @@ class App extends React.Component {
             userName: user.displayName,
             jordanCollection: []
           })
-          console.log(this.state.jordanCollection)
-          
+        
           // const dbref = firebase.database().ref(`/users/`);
           const dbref = firebase.database().ref(`/jordans/`)
-          console.log(dbref)
           dbref.on('value', (snapshot) => {
             const data = snapshot.val();
-            console.log(data)
             const state = []
             for (let key in data) {
               data[key].key = key;
               state.push(data[key])
             }    
-            console.log(state);
             this.setState({
               jordanCollection: state,
             })
             
           })
+            const dbrefUser = firebase.database().ref(`/users/${this.state.user}`)
+            dbrefUser.set(state)
         } //end if (user) is loggedIn
+        else if (user) {
+          // User is signed in.
+          const isAnonymous = user.isAnonymous;
+          const uid = user.uid;
+          this.setState({
+            loggedIn: false,          
+          })
+
+          const dbref = firebase.database().ref(`/jordans/`)
+          dbref.on('value', (snapshot) => {
+            const data = snapshot.val();
+          
+            const state = []
+            for (let key in data) {
+              data[key].key = key;
+              state.push(data[key])
+            }
+            console.log(state);
+            this.setState({
+              jordanCollection: state,
+            })
+          })
+        }
         else {
           this.setState({
+            guestMode: false,
             loggedIn: false,
-            user: null
+            jordanCollection: [],
+            user: {}
           })
         }
       }) //end firebase.auth9
       } //end componentDidMount()
       // toggle checkbox for to mark completion of show
-      toggleCompleted(shoe){
+      toggleCompleted(shoe, i){
         shoe.preventDefault
-        const jordanCheck = this.state.jordanCollection.find((jays) => {
-          return jays.key === shoe.key;
-        });
-      // referring to firebase to find state of completed.
-      const dbref = firebase.database().ref(`/jordans/${jordanCheck.key}`)
-      jordanCheck.completed = jordanCheck.completed === true ? false : true;
-      delete jordanCheck.key;
-      dbref.set(jordanCheck);  
+        const shoeArray = Array.from(this.state.jordanCollection);
+        shoeArray[i].completed = shoeArray[i].completed === true ? false : true;
+        this.setState({
+          jordanCollection: shoeArray
+        })
+      // // referring to firebase to find state of completed.
+      const dbrefUser = firebase.database().ref(`/users/${firebase.auth().user}`)
+
+      dbrefUser.set(shoeArray);  
     }
     // function to check for event to show 'moreInfo'
     showInfo(e,i) {
@@ -136,14 +194,36 @@ class App extends React.Component {
           <div className="wrapper">
             <header>
               <h1>Jays For Days</h1>
-                  <button onClick={this.state.loggedIn ? this.signOut : this.signIn}>
-                {this.state.loggedIn ? <div><p>Sign Out {this.state.userName}</p></div> : <div><span className="google-span"><i className="fab fa-google"></i></span><span>Sign In</span></div>}
-              </button>
+              <div className="sign-in-btn">
+                  <button className="sign-in-out" onClick={this.guestSignIn}>Sign In As Guest</button>
+                  <button className="sign-in-out" onClick={this.state.loggedIn ? this.signOut : this.signIn}>
+                {this.state.loggedIn ? <div><p>Sign Out {this.state.userName}</p></div> : <div><span><i className="fab fa-google"></i></span>Sign In</div>}
+                </button>
+              </div>
             </header>
-            <ul className="collection">
+            
+            <div className={this.state.loggedIn ? "no-intro" : "intro"}>
+              <h2>Jordan Vault</h2>  
+              <p>
+                Keep track of your Jordan Collection! 
+              </p>
+              <p>
+                Browse through the list to check out each Jordan shoe. 
+              </p>
+              <p>
+                Check off ones that you have collected and add the colourway you own!
+              </p>
+              <p>
+                Sign In to the Vault and check it out!
+              </p>
+              
+            </div>
+
+            <ul className={this.state.loggedIn ? "collection" : "no-collection"}>
+              
               {this.state.jordanCollection.map((shoe, i) => {
                 return (
-                  <JordanCard data={shoe} key={i} value={i} toggleCompleted={this.toggleCompleted} showInfo={(e) => this.showInfo(e,i)}/>
+                  <JordanCard data={shoe} key={i} value={i} checked={shoe.key === this.state.selectedShoe} toggleCompleted={(e) => this.toggleCompleted(e, i)} showInfo={(e) => this.showInfo(e,i)}/>
                 )
               })}   
             </ul>

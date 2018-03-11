@@ -18,6 +18,44 @@ h1 {
   letter-spacing: 2px;
   text-transform: uppercase; }
 
+.sign-in-btn {
+  display: flex;
+  justify-content: flex-end; }
+  .sign-in-btn .sign-in-out {
+    cursor: pointer;
+    background: black;
+    border: 3px solid white;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    margin-left: 10px;
+    transition: 0.3s; }
+  .sign-in-btn .sign-in-out:hover {
+    background: #CC1844;
+    transition: 0.3s; }
+  .sign-in-btn .fa-google {
+    margin-right: 10px; }
+  .sign-in-btn p {
+    margin: 0; }
+
+.no-intro {
+  display: none; }
+
+.intro {
+  background: rgba(0, 0, 0, 0.7);
+  border: 3px solid white;
+  padding: 15px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin: 25px auto; }
+  .intro h2 {
+    background: url("/images/aj-logo-red.svg") no-repeat center;
+    padding: 20px 0; }
+
+.no-collection {
+  display: none; }
+
 .collection {
   background: rgba(255, 255, 255, 0.5);
   list-style: none;
