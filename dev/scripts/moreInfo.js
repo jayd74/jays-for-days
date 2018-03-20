@@ -41,10 +41,10 @@ class MoreInfo extends React.Component {
                         </div>
                     })} */}
                     <h4>{Object.values(this.props.data.colorways)}</h4>
-                    <form action="" onSubmit={this.handleSubmit}>
+                    {/* <form action="" onSubmit={this.handleSubmit}>
                         <input id="colorways" type="text" placeholder="enter colourway" onChange={this.props.onChange} value={this.props.addColourway.colorways}/>
                         <input type="submit"/>
-                    </form>
+                    </form> */}
                     <h5>Details</h5>
                     <h3><a href={this.props.data.url} target="_blank">{this.props.data.url}</a></h3>
                 </div>               
